@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item class="flex flex-col">
+      <ion-label class="font-semibold">{{ 'API_URL' | translate }}</ion-label>
+      <input [(ngModel)]="settings.appUrl">
+    </ion-item>
+    <ion-item>
+      <ion-label class="font-semibold">{{ 'SELECT_LANG' | translate }}</ion-label>
+      <ion-select [(ngModel)]="settings.lang" (ionChange)="setLang()">
+        <ion-select-option value="en">en</ion-select-option>
+        <ion-select-option value="fr">fr</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,11 @@
+<ion-list>
+  <ion-item>
+    <ion-label class="font-semibold">{{ title | translate}}</ion-label>
+  </ion-item>
+  <ion-item *ngFor="let data of qrData">
+    <ion-label>{{ data.date }} - {{ data.data.slice(0, 20) }}</ion-label>
+    <ion-button fill="clear" slot="end" (click)="showPopup($event, data)">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-list>

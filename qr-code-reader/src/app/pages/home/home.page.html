@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="qr-code"></ion-icon>
+      {{ 'APP_TITLE' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <app-qr-data-list [qrData]="qrData" title="LATEST_DATA"></app-qr-data-list>
+
+  <!-- Controls -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="showScanOptions()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="chooseDate()">
+      <ion-icon name="calendar-number"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="openSettings()">
+      <ion-icon name="settings"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
