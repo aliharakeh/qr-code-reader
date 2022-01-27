@@ -10,6 +10,6 @@
 <ion-content>
   <div class="p-4">
     <div class="font-semibold text-lg">{{ 'DATA_RESULT' | translate }}</div>
-    {{ data.data }}
+    <div [innerHTML]="sanitizedData"></div>
   </div>
 </ion-content>

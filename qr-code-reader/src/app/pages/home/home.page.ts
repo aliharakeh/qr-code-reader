@@ -99,7 +99,9 @@ export class HomePage implements OnInit {
         return from(m.onDidDismiss());
       }),
       tap(data => {
-        this.router.navigateByUrl('date-data-list', { state: data.data });
+        if (data.data) {
+          this.router.navigateByUrl('date-data-list', { state: data.data });
+        }
       })
     ).subscribe();
   }

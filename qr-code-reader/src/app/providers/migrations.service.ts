@@ -25,7 +25,7 @@ export class MigrationsService {
       'CREATE MIGRATIONS TABLE',
       createTableQuery(this.TABLE_NAME, this.TABLE_COLUMNS)
     ).pipe(
-      catchError(err => EMPTY)
+      catchError(_ => EMPTY)
     );
   }
 

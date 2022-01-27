@@ -27,13 +27,14 @@ export class SqliteStorageService {
         location: 'default'
       })
     ).pipe(
-      tap((db: SQLiteObject) => this.db = db)
+      tap((db: SQLiteObject) => this.db = db),
+      catchError(_ => EMPTY)
     );
   }
 
   initDataTable() {
     return this.executeSQLWithLog('CREATE MAIN TABLE', createTableQuery(this.TABLE_NAME, this.TABLE_COLUMNS)).pipe(
-      catchError(err => EMPTY)
+      catchError(_ => EMPTY)
     );
   }
 
